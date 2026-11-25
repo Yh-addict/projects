@@ -1,8 +1,16 @@
 <!-- ... existing code ... -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مغامرة جدول الضرب 3D - إهداء إبراهيم</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#315b48">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="مغامرة هيما">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" sizes="192x192" href="moghamarat-hema-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="moghamarat-hema-512.png">
+    <link rel="apple-touch-icon" href="moghamarat-hema-512.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>مغامرة هيما</title>
     <!-- استيراد خطوط عربية طفولية وفخمة وخط للتوقيع -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -348,7 +356,7 @@
         }
         .btn-3d-white:active { box-shadow: 0 2px 0 var(--shadow-3d); }
 
-        /* بطاقات الحفظ ثلاثية الأبعاد القابلة للقلب (3D Flip Cards) مع محاذاة RTL */
+        /* بطاقات الحفظ ثلاثية الأبعاد القابلة للقلب (٣D Flip Cards) مع محاذاة RTL */
         .perspective-container {
             perspective: 1200px;
             direction: rtl;
@@ -472,7 +480,7 @@
             animation: gentleShake 0.5s ease-in-out;
         }
 
-        /* ميدالية 3D ذهبية لامعة قابلة للدوران */
+        /* ميدالية ٣D ذهبية لامعة قابلة للدوران */
         .medal-3d-wrapper {
             perspective: 1000px;
         }
@@ -575,6 +583,125 @@
                 display: none !important;
             }
         }
+    
+        /* هوية مغامرة هيما — مستوحاة من قبعة القش، القميص الأحمر، الخشب، والحديقة الخضراء */
+        body[data-theme="default"] {
+            --page-bg:
+                radial-gradient(ellipse at 12% 8%, rgba(255,255,255,.9), transparent 32%),
+                radial-gradient(ellipse at 88% 25%, rgba(246,190,174,.22), transparent 30%),
+                linear-gradient(155deg, #edf4e9 0%, #f8f3e9 48%, #e5efe4 100%);
+            --surface-bg: rgba(255, 253, 247, .94);
+            --surface-soft: rgba(238, 244, 232, .96);
+            --text-main: #263b32;
+            --text-muted: #64756a;
+            --accent-primary: #315b48;
+            --accent-secondary: #bd554b;
+            --border-main: #b7cdb8;
+            --shadow-3d: #789681;
+            --card-front-bg: linear-gradient(150deg, #fffefa 0%, #f1f5eb 100%);
+            --card-back-bg: linear-gradient(145deg, #f5dfb5 0%, #eacb91 100%);
+            --dedication-bg:
+                radial-gradient(circle at 14% 18%, rgba(189,85,75,.17), transparent 35%),
+                radial-gradient(circle at 88% 78%, rgba(89,133,99,.24), transparent 40%),
+                linear-gradient(145deg, #e9f0e5 0%, #f8f0e4 55%, #dce9dd 100%);
+            --dedication-card-bg: rgba(255, 252, 244, .96);
+            --dedication-border: #bd8b58;
+            --basmala-color: #315b48;
+            --basmala-glow: 0 2px 16px rgba(189,139,88,.22);
+            --cert-bg: radial-gradient(circle at center, #fffdf5 0%, #f4e8cc 100%);
+            --cert-border: #789681;
+            --cert-inner: #bd554b;
+            --three-c1: 0x5c896b;
+            --three-c2: 0xc96a5d;
+            --three-c3: 0xd8b77e;
+            --three-c4: 0x91ad92;
+            --three-c5: 0xe8a99a;
+        }
+
+        body {
+            background-attachment: fixed;
+            letter-spacing: 0;
+        }
+        .themed-surface {
+            border-width: 1px !important;
+            border-radius: 1.65rem !important;
+            box-shadow: 0 5px 0 var(--shadow-3d), 0 14px 32px rgba(39, 61, 48, .10) !important;
+            backdrop-filter: blur(16px);
+        }
+        .themed-soft {
+            border-radius: 1.2rem;
+        }
+        .btn-3d {
+            border-radius: 1rem !important;
+            transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+            filter: saturate(.92);
+        }
+        .btn-3d:hover {
+            transform: translateY(-2px);
+            filter: saturate(1.08);
+        }
+        .btn-3d-sky {
+            background: linear-gradient(145deg, #527e68, #315b48) !important;
+            color: #fffdf5 !important;
+            box-shadow: 0 5px 0 #254636, 0 9px 18px rgba(49,91,72,.18) !important;
+        }
+        .btn-3d-mint {
+            background: linear-gradient(145deg, #a9c5a6, #6f9b79) !important;
+            color: #183b2b !important;
+            box-shadow: 0 5px 0 #52775b, 0 9px 18px rgba(65,110,76,.16) !important;
+        }
+        .btn-3d-sun {
+            background: linear-gradient(145deg, #f0d49b, #d9ae68) !important;
+            color: #563d22 !important;
+            box-shadow: 0 5px 0 #b78c4f, 0 9px 18px rgba(150,111,57,.16) !important;
+        }
+        .btn-3d-purple {
+            background: linear-gradient(145deg, #d99a91, #bd655b) !important;
+            color: #fffaf4 !important;
+            box-shadow: 0 5px 0 #984b43, 0 9px 18px rgba(150,75,67,.16) !important;
+        }
+        .btn-3d-white {
+            background: linear-gradient(145deg, #fffefa, #edf2e9) !important;
+            color: #315344 !important;
+            border: 1px solid #c8d6c7 !important;
+            box-shadow: 0 5px 0 #b6c8b6, 0 9px 18px rgba(39,61,48,.08) !important;
+        }
+        .flip-card-front {
+            border: 1px solid #c5d5c4 !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 6px 0 #9db59f, 0 15px 28px rgba(39,61,48,.11) !important;
+        }
+        .flip-card-back {
+            border: 1px solid #d5b477 !important;
+            border-radius: 1.5rem !important;
+            box-shadow: 0 6px 0 #b78c4f, 0 15px 28px rgba(117,86,43,.12) !important;
+        }
+        .medal-3d {
+            background: radial-gradient(circle at 30% 25%, #fff4d6, #e6c17d 48%, #bd8b45 82%, #8c6337 100%) !important;
+        }
+        .certificate-frame {
+            border-radius: 1.5rem;
+        }
+        #dedication-screen .glow-orb {
+            opacity: .48;
+            filter: blur(68px);
+        }
+        #dedication-screen > div:nth-of-type(2) {
+            box-shadow: 0 12px 0 rgba(120,150,129,.55), 0 24px 65px rgba(38,59,50,.16) !important;
+        }
+        .math-expr {
+            font-variant-numeric: lining-nums;
+            font-feature-settings: "lnum";
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+            }
+        }
+
     </style>
 </head>
 <!-- ... existing code ... -->
@@ -721,7 +848,7 @@
                 <div>
                     <div class="flex flex-wrap items-center gap-2">
                         <h1 class="font-display text-xl sm:text-2xl font-black">
-                            مغامرة جدول الضرب ٣D
+                            مغامرة هيما
                         </h1>
                         <span class="px-2.5 py-0.5 rounded-full bg-amber-300/90 text-amber-950 text-xs font-extrabold shadow-xs">
                             إهداء: إبراهيم
@@ -819,7 +946,7 @@
             </div>
         </section>
 
-        <!-- القسم الأول: وضع الحفظ والاستكشاف (بطاقات 3D قابلة للقلب ×١ إلى ×١٢) -->
+        <!-- القسم الأول: وضع الحفظ والاستكشاف (بطاقات ٣D قابلة للقلب ×١ إلى ×١٢) -->
         <main id="learn-section" dir="rtl" class="text-right space-y-4">
             <div class="flex flex-wrap items-center justify-between gap-3 px-1">
                 <div class="flex flex-wrap gap-2">
@@ -840,7 +967,7 @@
 
             <!-- شبكة البطاقات الـ ١٢ -->
             <div id="flashcards-grid" dir="rtl" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5">
-                <!-- يتم توليد بطاقات 3D هنا -->
+                <!-- يتم توليد بطاقات ٣D هنا -->
             </div>
         </main>
 
@@ -1025,7 +1152,7 @@
     </div>
 
     <!-- ==========================================================================
-         نافذة وسام الاجتياز الاحتفالية الكبرى (Personalized 3D Mastery Badge Modal)
+         نافذة وسام الاجتياز الاحتفالية الكبرى (Personalized ٣D Mastery Badge Modal)
          ========================================================================== -->
     <div id="badge-ceremony-modal" dir="rtl" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-900/75 backdrop-blur-md">
         <div class="bg-gradient-to-b from-amber-50 via-white to-sky-50 text-slate-900 border-4 border-amber-400 rounded-[2.25rem] max-w-lg w-full p-6 sm:p-8 text-center shadow-[0_14px_0_#f59e0b,0_30px_60px_rgba(0,0,0,0.3)] relative">
