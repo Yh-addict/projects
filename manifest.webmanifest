@@ -1,0 +1,27 @@
+{
+  "id": "./",
+  "name": "مغامرة هيما",
+  "short_name": "مغامرة هيما",
+  "description": "مغامرة ممتعة لتعلّم جدول الضرب من ١ إلى ١٢",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#edf4e9",
+  "theme_color": "#315b48",
+  "icons": [
+    {
+      "src": "moghamarat-hema-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "moghamarat-hema-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
