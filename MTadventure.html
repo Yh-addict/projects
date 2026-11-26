@@ -702,6 +702,106 @@
             }
         }
 
+
+        /* لمسات فنية راقية للإهداء والشهادة */
+        #dedication-screen { isolation:isolate; }
+        #dedication-screen::before {
+            content:""; position:fixed; inset:14px; border:1px solid rgba(166,126,76,.38);
+            border-radius:28px; pointer-events:none; z-index:0;
+        }
+        #dedication-screen > div:nth-of-type(2) {
+            border:1px solid rgba(183,145,91,.72) !important;
+            outline:1px solid rgba(255,255,255,.72); outline-offset:-10px;
+            border-radius:30px !important;
+            background:
+              linear-gradient(135deg,rgba(255,255,255,.97),rgba(250,246,235,.96) 55%,rgba(239,246,235,.97)) !important;
+        }
+        #dedication-screen .themed-soft {
+            background:linear-gradient(145deg,rgba(255,255,255,.88),rgba(246,242,230,.88));
+            border:1px solid rgba(189,139,88,.35) !important;
+            box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 12px 28px rgba(49,91,72,.06);
+        }
+        #dedication-screen .basmala-glow {
+            letter-spacing:.04em;
+            text-shadow:0 2px 0 #fff,0 5px 18px rgba(189,139,88,.28);
+        }
+        #dedication-screen .font-signature {
+            display:inline-block; padding:0 1.1rem .2rem;
+            border-bottom:1px solid rgba(189,139,88,.55);
+        }
+        #certificate-modal { background:rgba(18,31,25,.88) !important; }
+        .certificate-frame {
+            isolation:isolate;
+            border:8px double #9b7544 !important;
+            border-radius:8px !important;
+            background:
+              radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.98),transparent 55%),
+              linear-gradient(135deg,#fffdf6 0%,#f7efd9 48%,#fffdf7 100%) !important;
+            box-shadow:inset 0 0 0 5px #fff, inset 0 0 0 8px #c9a66b,
+              inset 0 0 55px rgba(174,139,83,.12),0 28px 70px rgba(0,0,0,.3) !important;
+        }
+        .certificate-frame::after {
+            content:""; position:absolute; inset:25px; border:1px solid rgba(155,117,68,.38);
+            pointer-events:none; z-index:0;
+        }
+        .certificate-frame > * { position:relative; z-index:1; }
+        .certificate-frame h2 {
+            color:#315b48 !important; text-shadow:0 2px 0 rgba(255,255,255,.9);
+            letter-spacing:.02em;
+        }
+        .certificate-frame .cert-name-panel {
+            background:linear-gradient(145deg,#fff 0%,#fbf7ec 100%) !important;
+            border:1px solid #c9a66b !important;
+            box-shadow:inset 0 0 0 5px rgba(201,166,107,.10),0 10px 26px rgba(91,72,40,.08);
+        }
+        .certificate-frame .cert-name-panel #cert-student-name {
+            color:#315b48 !important; border-color:#bd8b58 !important;
+        }
+        .certificate-frame .cert-preview-placeholder {
+            display:inline-block; padding:.55rem 1.4rem; border:1px dashed #b78c56;
+            border-radius:14px; color:#8b704b; background:#faf4e7; font-size:1rem;
+        }
+        .certificate-frame .cert-preview-note {
+            color:#8b704b; font-size:.8rem; font-weight:700; margin-top:.5rem;
+        }
+        .certificate-frame .cert-seal {
+            background:radial-gradient(circle at 32% 25%,#fff2c8,#d9b56f 55%,#98703c 100%) !important;
+            border:3px double #fff8e7 !important;
+            box-shadow:0 0 0 2px #b38a4f,0 8px 18px rgba(92,67,31,.18);
+        }
+        .certificate-frame .cert-footer { border-color:rgba(155,117,68,.5) !important; }
+        @page { size: A4 landscape; margin: 8mm; }
+        @media print {
+            html, body { width:100% !important; height:auto !important; margin:0 !important; padding:0 !important; background:#fff !important; }
+            body * { visibility:hidden !important; }
+            #certificate-modal, #certificate-modal * { visibility:visible !important; }
+            #certificate-modal {
+                display:block !important; position:absolute !important; inset:0 !important;
+                width:100% !important; height:auto !important; overflow:visible !important;
+                padding:0 !important; margin:0 !important; background:#fff !important;
+                backdrop-filter:none !important;
+            }
+            #certificate-modal > div {
+                width:100% !important; max-width:none !important; margin:0 !important;
+            }
+            #certificate-printable {
+                display:flex !important; position:relative !important; inset:auto !important;
+                width:100% !important; height:180mm !important; min-height:0 !important;
+                max-height:180mm !important; margin:0 auto !important; padding:10mm 14mm !important;
+                overflow:hidden !important; box-sizing:border-box !important;
+                border-radius:0 !important; box-shadow:none !important;
+                page-break-inside:avoid !important; break-inside:avoid !important;
+                page-break-after:avoid !important; break-after:avoid-page !important;
+                justify-content:space-between !important;
+                -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;
+            }
+            #certificate-printable .cert-name-panel { margin:8px 0 !important; padding:14px 22px !important; }
+            #certificate-printable .cert-footer { margin-top:8px !important; padding-top:8px !important; }
+            #certificate-printable .cert-medals { margin:8px 0 !important; gap:5px !important; }
+            #certificate-printable .cert-medals span { font-size:9px !important; padding:4px 7px !important; }
+            .no-print { display:none !important; visibility:hidden !important; }
+        }
+
     </style>
 </head>
 <!-- ... existing code ... -->
@@ -763,6 +863,15 @@
                     <circle cx="57" cy="48" r="3" fill="#1E293B"/>
                     <path d="M44 56C46 60 54 60 56 56" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
                 </svg>
+            </div>
+
+            <div class="relative z-10 text-center mb-4">
+                <span class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full text-xs sm:text-sm font-extrabold tracking-wide"
+                      style="color:#80613b;background:rgba(201,166,107,.14);border:1px solid rgba(183,145,91,.42);">
+                    <i class="fa-solid fa-feather-pointed"></i> رسالة محبة وأثر طيب
+                </span>
+                <h2 class="font-display text-2xl sm:text-3xl font-black mt-3" style="color:#315b48;">من القلب إلى الأصدقاء</h2>
+                <div class="mx-auto mt-2 h-px w-24" style="background:linear-gradient(90deg,transparent,#bd8b58,transparent);"></div>
             </div>
 
             <!-- نص الإهداء الكامل من إبراهيم -->
@@ -1276,7 +1385,7 @@
                 </p>
 
                 <!-- نص التهنئة واسم الطالب -->
-                <div class="bg-white/90 border-2 border-amber-400/80 rounded-3xl p-5 sm:p-7 my-4 shadow-inner relative z-10">
+                <div class="cert-name-panel bg-white/90 border-2 border-amber-400/80 rounded-3xl p-5 sm:p-7 my-4 shadow-inner relative z-10">
                     <p class="text-base sm:text-xl font-bold text-slate-700 mb-2">
                         تُمنح هذه الشهادة بكل فخر واعتزاز إلى الطالب المتميز:
                     </p>
@@ -1288,8 +1397,10 @@
                     </p>
                 </div>
 
+                <p id="cert-preview-note" class="hidden cert-preview-note relative z-10">هذه معاينة للشهادة؛ سيظهر اسمك بعد الحصول على الأوسمة الاثني عشر.</p>
+
                 <!-- شريط الأوسمة الـ ١٢ بالأرقام العربية -->
-                <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2 my-4 relative z-10">
+                <div class="cert-medals flex flex-wrap justify-center gap-1.5 sm:gap-2 my-4 relative z-10">
                     <span class="px-2.5 py-1 rounded-full bg-amber-300/80 border border-amber-600/30 text-amber-950 font-black text-xs">★ جدول ١</span>
                     <span class="px-2.5 py-1 rounded-full bg-amber-300/80 border border-amber-600/30 text-amber-950 font-black text-xs">★ جدول ٢</span>
                     <span class="px-2.5 py-1 rounded-full bg-amber-300/80 border border-amber-600/30 text-amber-950 font-black text-xs">★ جدول ٣</span>
@@ -1305,7 +1416,7 @@
                 </div>
 
                 <!-- تذييل الشهادة: التاريخ، الختم الذهبي، وتوقيع إبراهيم -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-4 mt-4 border-t-2 border-amber-500/50 relative z-10">
+                <div class="cert-footer grid grid-cols-1 sm:grid-cols-3 items-center gap-4 pt-4 mt-4 border-t-2 border-amber-500/50 relative z-10">
                     <div class="text-center">
                         <p class="text-xs font-bold text-slate-600">تاريخ الإنجاز</p>
                         <p id="cert-date" class="font-display font-black text-base sm:text-lg text-slate-900 mt-1">٢٠٢٦</p>
@@ -1313,7 +1424,7 @@
 
                     <!-- ختم التفوق الذهبي -->
                     <div class="flex justify-center">
-                        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 via-amber-400 to-amber-600 border-4 border-white shadow-lg flex flex-col items-center justify-center text-amber-950 transform -rotate-6">
+                        <div class="cert-seal w-24 h-24 rounded-full bg-gradient-to-br from-yellow-300 via-amber-400 to-amber-600 border-4 border-white shadow-lg flex flex-col items-center justify-center text-amber-950 transform -rotate-6">
                             <i class="fa-solid fa-award text-3xl"></i>
                             <span class="font-display font-black text-[11px] mt-0.5">إتقان ١٠٠٪</span>
                             <span class="text-[9px] font-bold">بطل الضرب</span>
@@ -1329,9 +1440,12 @@
                 </div>
             </div>
 
+            <div id="certificate-preview-status" class="no-print hidden text-center text-amber-100 font-bold text-sm mt-3">
+                <i class="fa-solid fa-lock ml-1"></i> المعاينة متاحة للجميع، أما الاسم والطباعة فيُفتحان بعد جمع الأوسمة الـ١٢.
+            </div>
             <!-- أزرار التحكم أسفل الشهادة (لا تظهر عند الطباعة) -->
             <div class="no-print flex flex-wrap justify-center gap-3 mt-4">
-                <button onclick="window.print()" class="btn-3d btn-3d-mint rounded-2xl px-6 py-3.5 font-display font-black text-base sm:text-lg flex items-center gap-2">
+                <button id="certificate-print-btn" onclick="if(document.getElementById('certificate-modal').dataset.preview !== 'true') window.print()" class="btn-3d btn-3d-mint rounded-2xl px-6 py-3.5 font-display font-black text-base sm:text-lg flex items-center gap-2">
                     <i class="fa-solid fa-print"></i>
                     <span>طباعة الشهادة أو حفظها PDF</span>
                 </button>
@@ -2380,7 +2494,12 @@
                 grandIcon.className = 'w-14 h-14 rounded-2xl bg-amber-300 text-amber-950 flex items-center justify-center text-3xl shadow-sm';
                 grandDesc.textContent = `تبقى لك ${toArabicDigits(12 - masteredCount)} جداول لفتح شهادة الإتمام والتفوق بتوقيع إبراهيم!`;
                 grandActions.innerHTML = `
-                    <span class="px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 text-xs font-black">${toArabicDigits(masteredCount)} / ١٢</span>
+                    <div class="flex flex-col sm:flex-row items-center gap-2">
+                        <span class="px-4 py-1.5 rounded-full bg-amber-300 text-amber-950 text-xs font-black">${toArabicDigits(masteredCount)} / ١٢</span>
+                        <button onclick="openCertificateModal(true)" class="btn-3d btn-3d-white rounded-2xl px-3.5 py-2.5 font-display font-black text-xs sm:text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-eye"></i><span>معاينة الشهادة</span>
+                        </button>
+                    </div>
                 `;
             }
 
@@ -2395,28 +2514,65 @@
             modal.classList.remove('flex');
         }
 
-        function openCertificateModal() {
+        function openCertificateModal(isPreview = false) {
+            const isCompleted = Object.keys(state.masteredTables || {}).length === 12;
+            const previewMode = !isCompleted;
+
             updateStudentNameUI();
+            const nameElement = document.getElementById('cert-student-name');
+            const previewNote = document.getElementById('cert-preview-note');
+            const previewStatus = document.getElementById('certificate-preview-status');
+            const printButton = document.getElementById('certificate-print-btn');
+
+            if (previewMode) {
+                nameElement.textContent = 'اسمك هنا بعد إتمام الأوسمة';
+                nameElement.classList.add('cert-preview-placeholder');
+                previewNote.classList.remove('hidden');
+                previewStatus.classList.remove('hidden');
+                printButton.classList.add('hidden');
+            } else {
+                nameElement.textContent = state.studentName || 'البطل الصغير';
+                nameElement.classList.remove('cert-preview-placeholder');
+                previewNote.classList.add('hidden');
+                previewStatus.classList.add('hidden');
+                printButton.classList.remove('hidden');
+            }
+
             const today = toArabicDigits(new Date().toLocaleDateString('ar-SA', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
+                year: 'numeric', month: 'long', day: 'numeric'
             }));
             document.getElementById('cert-date').textContent = today;
 
             const modal = document.getElementById('certificate-modal');
+            modal.dataset.preview = previewMode ? 'true' : 'false';
             modal.classList.remove('hidden');
             modal.classList.add('flex');
 
-            playFanfareSound();
-            spawnConfettiBurst(150);
+            if (!previewMode) {
+                playFanfareSound();
+                spawnConfettiBurst(150);
+            }
         }
 
         function closeCertificateModal() {
             const modal = document.getElementById('certificate-modal');
             modal.classList.add('hidden');
             modal.classList.remove('flex');
+            modal.dataset.preview = 'false';
+            document.getElementById('cert-student-name').classList.remove('cert-preview-placeholder');
         }
+
+        window.addEventListener('beforeprint', function () {
+            const modal = document.getElementById('certificate-modal');
+            if (!modal || modal.dataset.preview === 'true') {
+                window.__certificatePreviewPrintBlocked = true;
+                return;
+            }
+            window.__certificatePreviewPrintBlocked = false;
+        });
+        window.addEventListener('afterprint', function () {
+            window.__certificatePreviewPrintBlocked = false;
+        });
 
         /* ==========================================================================
            ٩. خلفية Three.js ثلاثية الأبعاد المتفاعلة مع الثيمات
