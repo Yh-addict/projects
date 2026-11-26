@@ -802,6 +802,122 @@
             .no-print { display:none !important; visibility:hidden !important; }
         }
 
+
+        /* تباين ألوان الإهداء: ألوان نصوص مستقلة ومقروءة في جميع الثيمات */
+        #dedication-screen {
+            --dedication-copy: #263b32;
+            --dedication-panel-bg: rgba(255,255,255,.88);
+            --dedication-panel-copy: #334155;
+            --dedication-heading: #315b48;
+            --dedication-kicker: #76552d;
+            --dedication-highlight: #8a5b16;
+        }
+        [data-theme="burgundy"] #dedication-screen {
+            --dedication-copy: #fff3e8;
+            --dedication-panel-bg: rgba(67,15,35,.94);
+            --dedication-panel-copy: #fff0e8;
+            --dedication-heading: #ffe0a6;
+            --dedication-kicker: #ffe3b0;
+            --dedication-highlight: #ffd58a;
+        }
+        [data-theme="hilal"] #dedication-screen {
+            --dedication-copy: #f5f9ff;
+            --dedication-panel-bg: rgba(5,26,67,.96);
+            --dedication-panel-copy: #f1f7ff;
+            --dedication-heading: #ffffff;
+            --dedication-kicker: #dbeafe;
+            --dedication-highlight: #bfdbfe;
+        }
+        [data-theme="valverde"] #dedication-screen {
+            --dedication-copy: #effff7;
+            --dedication-panel-bg: rgba(5,35,27,.96);
+            --dedication-panel-copy: #e6fff3;
+            --dedication-heading: #d1fae5;
+            --dedication-kicker: #d1fae5;
+            --dedication-highlight: #fcd78b;
+        }
+        #dedication-screen > div:nth-of-type(2) {
+            background: var(--dedication-card-bg) !important;
+            color: var(--dedication-copy) !important;
+        }
+        #dedication-screen .themed-soft {
+            background: var(--dedication-panel-bg) !important;
+            color: var(--dedication-panel-copy) !important;
+            border-color: var(--dedication-border) !important;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 10px 26px rgba(0,0,0,.12) !important;
+        }
+        #dedication-screen .themed-soft p:not([style*="color"]),
+        #dedication-screen .themed-soft label,
+        #dedication-screen .themed-soft span:not(.font-signature) {
+            color: var(--dedication-panel-copy);
+        }
+        #dedication-screen h2 { color: var(--dedication-heading) !important; }
+        #dedication-screen .basmala-glow {
+            color: var(--basmala-color) !important;
+            text-shadow: 0 2px 0 rgba(0,0,0,.12), 0 0 18px rgba(255,255,255,.18) !important;
+        }
+        #dedication-screen .font-signature {
+            color: var(--dedication-highlight) !important;
+            text-shadow: none !important;
+        }
+        #dedication-screen .text-themed-muted { color: var(--dedication-kicker) !important; }
+        #dedication-screen .themed-soft p[style*="accent-secondary"] {
+            color: var(--dedication-highlight) !important;
+        }
+
+        /* تجربة متجاوبة للهواتف والأجهزة اللوحية والحواسيب */
+        .mobile-menu-toggle { display:none; }
+        .header-actions { min-width:0; }
+        img, svg, video, canvas { max-width:100%; }
+        html { -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+        body { overflow-x:hidden; }
+        button, input, select, textarea { touch-action:manipulation; }
+
+        @media (max-width: 900px) {
+            .app-layer { width:100%; max-width:100%; }
+            .app-layer > header { position:relative; align-items:center; gap:.75rem; }
+            .mobile-menu-toggle { display:inline-flex; margin-inline-start:auto; }
+            .header-actions {
+                display:none !important;
+                width:100%; flex-basis:100%;
+                padding:.85rem; margin-top:.25rem;
+                border:1px solid var(--border-main);
+                border-radius:1.25rem;
+                background:var(--surface-soft);
+                box-shadow:0 12px 28px rgba(0,0,0,.12);
+                align-items:stretch; justify-content:center;
+            }
+            .header-actions.is-open { display:flex !important; }
+            .header-actions > * { flex:1 1 auto; justify-content:center; }
+            .header-actions #sound-toggle-btn { flex:0 0 2.75rem; }
+            #tables-nav-grid { grid-template-columns:repeat(6,minmax(0,1fr)); }
+            #learn-section, .app-layer > section { min-width:0; }
+        }
+        @media (max-width: 600px) {
+            .app-layer { padding: .65rem !important; gap:.85rem !important; }
+            .app-layer > header { padding:.8rem !important; border-radius:1.25rem !important; }
+            .app-layer > header > div:first-child { min-width:0; flex:1 1 auto; gap:.55rem; }
+            .app-layer > header > div:first-child > div:last-child { min-width:0; }
+            #header-student-name { overflow-wrap:anywhere; }
+            .app-layer > section { padding:.85rem !important; border-radius:1.25rem !important; }
+            #tables-nav-grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:.45rem !important; }
+            #workspace-title { font-size:1.15rem; }
+            #workspace-subtitle { line-height:1.65; }
+            .header-actions { gap:.5rem !important; }
+            .header-actions button { min-height:2.75rem; padding:.55rem .7rem !important; font-size:.82rem !important; }
+            .header-actions #sound-toggle-btn { min-height:2.75rem; }
+            .modal, [role="dialog"] { max-width:calc(100vw - 1rem); }
+        }
+        @media (max-width: 380px) {
+            .app-layer > header > div:first-child .w-14 { width:2.8rem; height:2.8rem; }
+            .app-layer > header > div:first-child .w-14 svg { width:2.2rem; height:2.2rem; }
+            .app-layer h1 { font-size:1.05rem !important; }
+            #tables-nav-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+            .mobile-menu-toggle { width:2.7rem; height:2.7rem; }
+        }
+        @media (min-width: 901px) {
+            .header-actions { display:flex !important; }
+        }
     </style>
 </head>
 <!-- ... existing code ... -->
@@ -974,8 +1090,15 @@
                 </div>
             </div>
 
+            <!-- زر القائمة للأجهزة ذات الشاشات الصغيرة -->
+            <button id="mobile-menu-toggle" type="button" aria-label="فتح قائمة الأدوات" aria-expanded="false"
+                    aria-controls="header-actions" onclick="toggleHeaderMenu()"
+                    class="mobile-menu-toggle btn-3d btn-3d-white rounded-2xl w-12 h-12 items-center justify-center text-xl shrink-0">
+                <i id="mobile-menu-icon" class="fa-solid fa-bars"></i>
+            </button>
+
             <!-- مؤشرات الإنجاز وأزرار التحكم والثيمات -->
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <div id="header-actions" class="header-actions flex flex-wrap items-center gap-2 sm:gap-3">
                 <!-- عداد النجوم بالأرقام العربية -->
                 <div class="themed-soft border-2 rounded-2xl px-3.5 py-2 flex items-center gap-2 shadow-xs" style="border-color: var(--accent-secondary);">
                     <i class="fa-solid fa-star text-amber-400 text-xl animate-spin" style="animation-duration: 8s;"></i>
@@ -1569,6 +1692,22 @@
            ٢. نظام الثيمات الخمسة (Default, Burgundy, Real Madrid, Hilal, Valverde)
            ========================================================================== */
         const ALL_THEMES = ['default', 'burgundy', 'realmadrid', 'hilal', 'valverde'];
+
+        function toggleHeaderMenu(forceState) {
+            const menu = document.getElementById('header-actions');
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (!menu || !toggle || !icon) return;
+            const shouldOpen = typeof forceState === 'boolean' ? forceState : !menu.classList.contains('is-open');
+            menu.classList.toggle('is-open', shouldOpen);
+            toggle.setAttribute('aria-expanded', String(shouldOpen));
+            toggle.setAttribute('aria-label', shouldOpen ? 'إغلاق قائمة الأدوات' : 'فتح قائمة الأدوات');
+            icon.className = shouldOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900) toggleHeaderMenu(false);
+        }, { passive: true });
 
         function openThemeModal() {
             playFlipSound();
